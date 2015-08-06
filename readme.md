@@ -1,1 +1,1 @@
-test
+詳細は [connpass イベントページ](http://javado.connpass.com/event/18278/) へ

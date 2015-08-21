@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class App {
+public class Answer {
 
   private Service service;
 
   public static void main(String[] args) {
-    App app = new App();
+    Answer app = new Answer();
     app.practice();
     app.example0();
     app.example1();
@@ -28,7 +28,7 @@ public class App {
     app.example12();
   }
 
-  public App() {
+  public Answer() {
     service = new Service();
   }
 
@@ -36,25 +36,26 @@ public class App {
     System.out.println(object.toString());
   }
 
-  // 練習1: 
+  // 練習1:
   public void practice() {
     System.out.println("------------ practice ----------");
-    int[] ages = new int[]{22, 10, 19, 38};
+    int[] ages = new int[] { 22, 10, 19, 38 };
     Arrays.stream(ages)
-          .filter(n -> n >= 20)
-          .forEach(n -> System.out.println(n));
+        .filter(n -> n >= 20)
+        .forEach(n -> System.out.println(n));
   }
-  
+
+  // 練習2用
+  public void example0() {
+    System.out.println("------------ example0 ----------");
+    List<Profile> choiced = service.fetchProfiles();
+    view(choiced);
+  }
+
   // 練習2: forEachを使ってリストの内容を表示する
   public void view(List<?> list) {
     list.stream()
         .forEach(System.out::println);
-  }
-
-  public void example0() {
-    System.out.println("------------ example0 ----------");
-    List<Profile> profiles = service.fetchProfiles();
-    view(profiles);
   }
 
   // 演習1: 女性(sex==1)の人を抜き出す
@@ -78,19 +79,19 @@ public class App {
     view(choiced);
   }
 
-  // 演習3: 女性(sex==1)で、二十歳以上の人の名前を抜き出す
+  // 演習3: 女性(sex==1)で、二十歳以上の人の名前だけを抜き出す
   public void example3() {
     System.out.println("------------ example3 ----------");
     List<Profile> profiles = service.fetchProfiles();
-    List<String> mapped = profiles.stream()
+    List<String> choiced = profiles.stream()
         .filter(p -> p.getSex() == 1)
         .filter(p -> p.getAge() >= 20)
         .map(p -> p.getName())
         .collect(Collectors.toList());
-    view(mapped);
+    view(choiced);
   }
 
-  // 演習4: 女性(sex==1)で、二十歳以上を抜き出し、年齢順にソートする
+  // 演習4: 演習2の内容を、年齢順に昇順ソートする
   public void example4() {
     System.out.println("------------ example4 ----------");
     List<Profile> profiles = service.fetchProfiles();
@@ -102,7 +103,7 @@ public class App {
     view(choiced);
   }
 
-  // 演習5: 男性(sex==0)で、未成年人を抜き出し、年齢順にソートする
+  // 演習5: 男性(sex==0)で、未成年人を抜き出し、年齢順に昇順ソートする
   public void example5() {
     System.out.println("------------ example5 ----------");
     List<Profile> profiles = service.fetchProfiles();
@@ -114,7 +115,7 @@ public class App {
     view(choiced);
   }
 
-  // 演習6: 演習5を逆ソートする
+  // 演習6: 演習5を降順ソートにする
   public void example6() {
     System.out.println("------------ example6 ----------");
     List<Profile> profiles = service.fetchProfiles();
@@ -136,7 +137,7 @@ public class App {
     view(choiced);
   }
 
-  // 演習8: カレーの食べ方"せき止め派"のうち、最初の一人を取り出す（パラレル処理）
+  // 演習8: 演習7をパラレル処理にする
   public void example8() {
     System.out.println("------------ example8 ----------");
     List<Profile> profiles = service.fetchProfiles();
@@ -166,7 +167,7 @@ public class App {
     view(choiced);
   }
 
-  // 演習11: 都道府県で名前だけグルーピングする
+  // 演習11: 都道府県で名前だけをグルーピングする
   // 長いので、Collectors.*をstatic importすると楽
   public void example11() {
     System.out.println("------------ example11 ----------");

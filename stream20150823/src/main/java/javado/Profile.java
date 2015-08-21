@@ -63,6 +63,7 @@ public class Profile {
 
   @Override
   public String toString() {
+    // 副作用の例。pararellにすると表記順がぐちゃぐちゃに...
     StringJoiner joiner = new StringJoiner(",", "Profile{", "}");
     Stream.of(name, sex.toString(), age.toString(), state, policy)
         .forEach(joiner::add);

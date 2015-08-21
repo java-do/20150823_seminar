@@ -17,7 +17,7 @@ public class Service {
     path = Paths.get(ClassLoader.getSystemResource("profile.txt").getPath());
   }
 
-  // 練習： テキストファイルを読み込んで、1行目（ヘッダ）をスキップし、ProfileオブジェクトのListをで返す
+  // 例： テキストファイルを読み込み、1行目（ヘッダ）をスキップし、要素（2行目以降）をProfileオブジェクトに置き換えて、Listに集めて返す
   public List<Profile> fetchProfiles() {
     try (Stream<String> lines = Files.lines(path)) {
       return lines

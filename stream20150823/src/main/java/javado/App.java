@@ -98,7 +98,7 @@ public class App {
     view(choiced);
   }
 
-  // 演習6: 男性(sex==0)で、未成年人を抜き出し、年齢順に逆ソートする
+  // 演習6: 演習5を逆ソートする
   public void example6() {
     System.out.println("------------ example6 ----------");
     List<Profile> choiced = profiles.stream()
@@ -118,7 +118,7 @@ public class App {
     view(choiced);
   }
 
-  // 演習8: カレーの食べ方"せき止め派"の人数を出す
+  // 演習8: カレーの食べ方"せき止め派"のうち、最初の一人を取り出す（パラレル処理）
   public void example8() {
     System.out.println("------------ example8 ----------");
     Profile choiced = profiles.stream()

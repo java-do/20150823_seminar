@@ -158,7 +158,7 @@ public class Answer {
     view(choiced);
   }
 
-  // 演習10: 都道府県でグルーピングする
+  // 演習10: 都道府県をキーにして、グルーピングする
   public void example10() {
     System.out.println("------------ example10 ----------");
     List<Profile> profiles = service.fetchProfiles();
@@ -167,7 +167,7 @@ public class Answer {
     view(choiced);
   }
 
-  // 演習11: 都道府県で名前だけをグルーピングする
+  // 演習11: 都道府県をキーにして、名前だけをグルーピングする
   // 長いので、Collectors.*をstatic importすると楽
   public void example11() {
     System.out.println("------------ example11 ----------");

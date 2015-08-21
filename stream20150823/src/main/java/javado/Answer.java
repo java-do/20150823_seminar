@@ -184,6 +184,7 @@ public class Answer {
     List<String> choiced = profiles.stream()
         .map(Profile::getPolicy)
         .map(s -> s.split("・"))
+        // 上の2行は .map(p -> p.getPolicy().split("・")) にまとめてもよい
         .flatMap(strs -> Arrays.stream(strs))
         .distinct()
         .collect(Collectors.toList());

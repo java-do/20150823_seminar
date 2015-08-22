@@ -55,7 +55,7 @@ public class Answer {
   // 練習2: forEachを使ってリストの内容を表示する
   public void view(List<?> list) {
     list.stream()
-        .forEach(System.out::println);
+        .forEach(i -> System.out.println(i));
   }
 
   // 演習1: 女性(sex==1)の人を抜き出す
@@ -84,8 +84,8 @@ public class Answer {
     System.out.println("------------ example3 ----------");
     List<Profile> profiles = service.fetchProfiles();
     List<String> choiced = profiles.stream()
-        .filter(p -> p.getSex() == 1)
-        .filter(p -> p.getAge() >= 20)
+        .filter(p -> p.isFamale())
+        .filter(p -> p.isAdult())
         .map(p -> p.getName())
         .collect(Collectors.toList());
     view(choiced);

@@ -34,11 +34,11 @@ public class HandsOn {
     System.out.println(object.toString());
   }
 
-  // 練習1:
+  // 練習1:まずは写経
   public void practice() {
     System.out.println("------------ practice ----------");
     int[] ages = new int[] { 22, 10, 19, 38 };
-    // ヒント：教科書の例に沿って書いてみましょう
+    // ヒント：教科書10ページ目の例に沿って、20以上をfilterしてforEachで表示しましょう
   }
 
   // 練習2用
@@ -171,7 +171,7 @@ public class HandsOn {
     view(choiced);
   }
 
-  // 演習12: リストに存在するカレーの食べ方を全てリストアップする
+  // 演習12: リストに存在するカレーの食べ方の要素を全てリストアップする
   public void example12() {
     System.out.println("------------ example12 ----------");
     List<Profile> profiles = service.fetchProfiles();
